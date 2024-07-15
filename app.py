@@ -49,7 +49,7 @@ def get_claude_llm():
 
 def get_llama2_llm():
     # Create the Llama2 model
-    llm = Bedrock(model_id="meta.llama2-70b-chat-v1", client=bedrock,
+    llm = Bedrock(model_id="meta.llama3-8b-instruct-v1:0", client=bedrock,
                   model_kwargs={'max_gen_len': 512})
     return llm
 
@@ -86,7 +86,7 @@ def get_response_llm(llm, vectorstore_faiss, query):
 def main():
     st.set_page_config("Chat PDF")
 
-    st.header("Surprise Surprise! Ask me anything regarding APM, Otto💁")
+    st.header("Ask me anything regarding the docs uploaded💁")
 
     user_question = st.text_input("Ask a Question from the wiki")
 
